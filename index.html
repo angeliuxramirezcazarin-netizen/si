@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Estudio Aurora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1b1b27;
+        --muted: #59607a;
+        --accent: #6c5ce7;
+        --accent-soft: rgba(108, 92, 231, 0.14);
+        --glass: rgba(255, 255, 255, 0.6);
+        --shadow: 0 20px 50px rgba(20, 20, 40, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Inter", system-ui, sans-serif;
+        background: radial-gradient(circle at top, #faf6ff, #f3f4ff 40%, #eceeff 100%);
+        color: var(--ink);
+        min-height: 100vh;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        padding: 3.5rem clamp(1.5rem, 5vw, 6rem) 4rem;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+      }
+
+      .logo span {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: var(--accent);
+        color: white;
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+      }
+
+      nav {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+
+      nav a {
+        color: inherit;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2.5rem;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin-bottom: 2rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.85rem 1.6rem;
+        border-radius: 999px;
+        border: none;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 0.95rem;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+        box-shadow: 0 15px 30px rgba(108, 92, 231, 0.3);
+      }
+
+      .btn-secondary {
+        background: white;
+        color: var(--accent);
+        border: 1px solid var(--accent-soft);
+      }
+
+      .hero-card {
+        background: var(--glass);
+        border-radius: 28px;
+        padding: 2rem;
+        backdrop-filter: blur(18px);
+        box-shadow: var(--shadow);
+        display: grid;
+        gap: 1.5rem;
+      }
+
+      .hero-card h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .metric {
+        background: white;
+        border-radius: 18px;
+        padding: 1rem;
+        box-shadow: 0 12px 25px rgba(24, 24, 64, 0.08);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.4rem;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .card {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 20px;
+        box-shadow: 0 16px 30px rgba(23, 23, 60, 0.08);
+        display: grid;
+        gap: 0.75rem;
+      }
+
+      .card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+      }
+
+      footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        font-size: 0.9rem;
+        color: var(--muted);
+        padding-top: 1rem;
+        border-top: 1px solid rgba(90, 90, 130, 0.12);
+      }
+
+      @media (max-width: 720px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          flex-wrap: wrap;
+        }
+
+        footer {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo">
+          <span>A</span>
+          Estudio Aurora
+        </div>
+        <nav>
+          <a href="#servicios">Servicios</a>
+          <a href="#equipo">Equipo</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Diseño digital que se siente tan bien como se ve.</h1>
+          <p>
+            Creamos experiencias web luminosas para marcas que quieren transmitir calma,
+            confianza y personalidad. Cada detalle está pensado para enamorar a primera vista.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary">Agendar una sesión</button>
+            <button class="btn btn-secondary">Ver portafolio</button>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h2>Tu estudio creativo en datos</h2>
+          <div class="metric-grid">
+            <div class="metric">
+              <strong>48</strong>
+              <span>Marcas acompañadas</span>
+            </div>
+            <div class="metric">
+              <strong>12</strong>
+              <span>Países inspirados</span>
+            </div>
+            <div class="metric">
+              <strong>4.9 ★</strong>
+              <span>Reseñas promedio</span>
+            </div>
+          </div>
+          <div>
+            <p>
+              Planeamos, diseñamos y lanzamos sitios que conectan con tu audiencia desde el
+              primer scroll.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="section-grid">
+        <article class="card">
+          <h3>Branding delicado</h3>
+          <p>Identidades visuales cálidas con tipografías y paletas que cuentan tu historia.</p>
+        </article>
+        <article class="card">
+          <h3>Web premium</h3>
+          <p>Interfaces responsive con micro-interacciones suaves y un rendimiento impecable.</p>
+        </article>
+        <article class="card">
+          <h3>Contenido magnético</h3>
+          <p>Mensajes claros y visuales que guían a tu audiencia hacia la acción correcta.</p>
+        </article>
+      </section>
+
+      <section id="equipo" class="section-grid">
+        <article class="card">
+          <h3>Lucía Fern</h3>
+          <p>Dirección creativa y moodboards sensoriales para cada proyecto.</p>
+        </article>
+        <article class="card">
+          <h3>Marco Sol</h3>
+          <p>Diseño UI y sistemas visuales con precisión editorial.</p>
+        </article>
+        <article class="card">
+          <h3>Noa Vega</h3>
+          <p>Estrategia digital para que tu web convierta sin perder belleza.</p>
+        </article>
+      </section>
+
+      <footer id="contacto">
+        <span>hello@estudioaurora.com</span>
+        <span>Disponible para proyectos desde septiembre 2024</span>
+      </footer>
+    </main>
+  </body>
+</html>
